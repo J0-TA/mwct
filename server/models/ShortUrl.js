@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const uniqueString = require('unique-string');
+const { nanoid } = require('nanoid');
 
 const shortUrlSchema = new Schema({
     realUrl: {
@@ -11,11 +11,15 @@ const shortUrlSchema = new Schema({
         type: String,
         required: true,
         unique: true,
-        default: uniqueString().slice(0, 5),
+        trim: true,
+        maxlength: 6,
+        minlength: 4,
+        default: nanoid(6),
     },
     clicksNumber: {
         type: Number,
         required: true,
+        min: 0,
         default: 0,
     }
 }, {

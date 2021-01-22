@@ -8,7 +8,8 @@ const bodyParser = require('body-parser');
 const index = require('./api');
 
 mongoose
-    .connect(`${process.env.DB_LOCAL}`, {
+    .connect(`mongodb://localhost:27017/MWCT`, {
+        useCreateIndex: true,
         useNewUrlParser: true,
         useUnifiedTopology: true,
     }).then(x => {
@@ -34,6 +35,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: false
 }));
-app.use('/', index);
+app.use('/api', index);
 
 module.exports = app;

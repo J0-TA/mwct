@@ -1,5 +1,5 @@
 const router = require('express').Router();
 
-router.use('/shorturl', require('./shorturl'));
+router.use('/', require('./shorturl'));
 
 module.exports = router;
