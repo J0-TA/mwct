@@ -5,7 +5,7 @@ const app = express();
 const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const index = require('./routes');
+const index = require('./api');
 
 mongoose
     .connect(`${process.env.DB_LOCAL}`, {

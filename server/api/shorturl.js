@@ -2,7 +2,7 @@ require('dotenv').config();
 
 const express = require('express');
 const router = express.Router();
-const ShorUrl = require('../../models/ShortUrl');
+const ShorUrl = require('../models/ShortUrl');
 
 router.get('/all', (req,res,next) => {
     ShorUrl.find()
