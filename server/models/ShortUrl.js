@@ -9,7 +9,6 @@ const shortUrlSchema = new Schema({
     },
     shortCode: {
         type: String,
-        required: true,
         unique: true,
         trim: true,
         maxlength: 6,
@@ -18,7 +17,6 @@ const shortUrlSchema = new Schema({
     },
     clicksNumber: {
         type: Number,
-        required: true,
         min: 0,
         default: 0,
     }
